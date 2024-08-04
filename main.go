@@ -18,6 +18,10 @@ func setupRouter() *gin.Engine {
 		c.String(http.StatusOK, "pong")
 	})
 
+	r.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "Hi man , your system is hacked")
+	})
+
 	// Get user value
 	r.GET("/user/:name", func(c *gin.Context) {
 		user := c.Params.ByName("name")
